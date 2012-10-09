@@ -25,6 +25,9 @@
   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
   <!-- <link rel="stylesheet" href="themes/transition/horizontal-slide.css"> -->
 
+  <link rel="stylesheet" href="syntaxhighlighter/styles/shCore.css">
+  <link rel="stylesheet" href="syntaxhighlighter/styles/shThemeDefault.css">
+
   <style>
     .slide { height: 100%; }
     .deck-slide-scaler { height: 100%; }
@@ -158,21 +161,21 @@
 <section class="slide">
 <h2>&lt;img&gt;</h2>
 <p><blockquote>I'd like to propose a new, optional HTML tag: IMG</blockquote></p>
-<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><IMG SRC="file://foobar.com/foo/bar/blargh.xbm"></textarea>
+<pre class="brush: xml">&lt;IMG SRC="file://foobar.com/foo/bar/blargh.xbm"&gt;</pre>
 <p><cite>Marc Andreessen, Feb 25 1993</cite></p>
 </section>
 
 <section class="slide">
 <h2>&lt;img&gt;</h2>
 <p><blockquote>I have something very similar in Midas 2.0</blockquote></p>
-<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></textarea>
+<pre class="brush: xml">&lt;ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"&gt;</pre>
 <p><cite>Tony Johnson, Feb 25 1993</cite></p>
 </section>
 
 <section class="slide">
 <h2>&lt;img&gt;</h2>
 <p><blockquote>I had <strong>imagined</strong> that figures would be represented as</blockquote></p>
-<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><a name=fig1 href="fghjkdfghj" REL="EMBED, PRESENT">Figure</a></textarea>
+<pre class="brush: xml">&lt;a name=fig1 href="fghjkdfghj" REL="EMBED, PRESENT"&gt;Figure&lt;/a&gt;</pre>
 <p><cite>Tim Berners-Lee, Feb 25 1993</cite></p>
 </section>
 
@@ -278,17 +281,40 @@
   <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ie+9,ie+10,firefox+7,firefox+16,chrome+14,chrome+23"></iframe>
 </section>
 
+<section class="slide overlay">
+  <h3><a href="https://developer.mozilla.org/en-US/demos/devderby/2012/march" target="_blank">CSS 3D Transforms</a></h3>
+  <h4>+ IE, Firefox</h4>
+  <iframe height="100%" width="100%" src="https://developer.mozilla.org/en-US/demos/devderby/2012/march"></iframe>
+</section>
+
 <section class="slide">
-  <h3>Web Sockets</h3>
+  <h1>Plug</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://techfests.com/Tulsa/2012/Speakers/PatrickForringer/default.aspx">I'm a developer, not a designer! You are so, and it isn't hard!</a></h3>
+  <iframe height="100%" width="100%" src="http://techfests.com/Tulsa/2012/Speakers/PatrickForringer/default.aspx"></iframe>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/WebSockets">Web Sockets</a></h3>
+  <h4>+ IE</h4>
+  <pre class="brush: js">var conn = new WebSocket("ws://ttf-html5.jit.su/");
+conn.onmessage = function (event) {
+  goto(JSON.parse(event.data).slide);
+}
+conn.send("{slide:21}");</pre>
+  <h4>Servers</h4>
   <ul>
-    <li class="slide">Socket to you</li>
-    <li class="slide">socket.io</li>
-    <li class="slide">SignalR</li>
+    <li>node.js - <a href="http://socket.io/" target="_blank">socket.io</a></li>
+    <li>.NET - <a href="http://signalr.net/" target="_blank">SignalR</a></li>
+    <li>PHP, Ruby, python, others.</li>
   </ul>
 </section>
 
 <section class="slide">
-  <h3>Cross-Origin Resource Sharing (CORS)</h3>
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/HTTP_access_control">Cross-Origin Resource Sharing (CORS)</a></h3>
+  <h4>+ IE</h4>
   <p>The right way to do JSONP</p>
   <pre>Origin: http://ttf-html5.jit.su</pre>
   <pre>Access-Control-Allow-Origin: *
@@ -297,8 +323,139 @@ Access-Control-Allow-Credentials: false</pre>
 </section>
 
 <section class="slide">
-  <h3>Offline applications</h3>
-  <pre>&lt;html manifest="manifest.appcache"&lt;</pre>
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/HTML/Using_the_application_cache">Offline applications</a></h3>
+  <h4>+ IE</h4>
+  <pre class="brush: xml">&lt;html manifest="manifest.appcache"&gt;</pre>
+  <h4>manifest.appcache</h4>
+  <pre>CACHE MANIFEST
+index.html
+style.css
+script.js
+
+NETWORK:
+new_data.json
+
+FALLBACK:
+data.json</pre>
+</section>
+
+<section class="slide">
+  <h3><a href="https://developer.mozilla.org/en-US/docs/DOM/Storage" target="_blank">DOM Storage</a></h3>
+  <pre class="brush: js">window.localStorage.setItem("data", "{player:{name:"groovecoder"}}");
+alert(window.localStorage.getItem("data").player.name);
+
+window.sessionStorage.setItem("data", "{player:{name:"groovecoder"}}");
+alert(window.sessionStorage.getItem("data").player.name);
+  </pre>
+</section>
+
+<section class="slide">
+  <h3><a href="https://developer.mozilla.org/en-US/docs/IndexedDB" target="_blank">IndexedDB</a></h3>
+  <h4> + IE, Firefox, Chrome</h4>
+  <pre class="brush: js">var db = null;
+var request = indexedDB.open("todos");
+request.onsuccess = function(e) {
+  var vReq = null;
+  db = e.target.result;
+  vReq = db.setVersion("1.0");
+  vReq.onsuccess = function(e) {
+    var store = db.createObjectStore("todo",
+      {keyPath: "timeStamp"});
+  }
+  var trans = db.transaction(["todo"], IDBTransaction.READ_WRITE, 0);
+  var store = trans.objectStore("todo");
+  var storeReq = store.put({
+    "text": todoText,
+    "timeStamp": new Date().getTime();
+  });
+}</pre>
+</section>
+
+<section class="slide">
+  <h3><a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a></h3>
+  <pre class="brush: js">var db = new lawnchair({name: 'todo'}, function(store) {
+  var todo = {text: todoText, timestamp: new Date().getTime();}
+  store.save(todo);
+}</pre>
+  <ul>
+    <li>IndexedDB</li>
+    <li>dom</li>
+    <li>webkit-sqlite</li>
+    <li>gears-sqlite (Android 1.x)</li>
+    <li>ie-userdata</li>
+    <li>blackberry-persistent-store</li>
+  </ul>
+</section>
+  
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://caniuse.com/#compare=ios_saf+5.0-5.1,ios_saf+6,android+3,android+4.1,op_mob+11.5,op_mob+12,bb+7,bb+10,and_chr+0,and_ff+0">caniuse.com 2012 mobile</a><br/>iOS 5 -> 6, Android 2.3.7 -> 4.1, Amazon Silk, Opera Mobile 11 -> 12, Blackberry 7 -> 10, Windows Phone 8, Chrome 18 (Android), Firefox 15 (Android)</h3>
+  <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ios_saf+5.0-5.1,ios_saf+6,android+3,android+4.1,op_mob+11.5,op_mob+12,bb+7,bb+10,and_chr+0,and_ff+0"></iframe>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Using_geolocation">Geolocation</a></h3>
+  <h4>Everyone</h4>
+  <pre class="brush: js">navigator.geolocation.getCurrentPosition(function(position){
+  processCoords(position.coords.latitude, position.coords.longitude);
+});</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Mozilla_event_reference/deviceorientation">Device Orientation</a></h3>
+  <h4>+ Opera and Blackberry</h4>
+  <pre class="brush: js">window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(data) {
+  console.log("x: " + data.beta);
+  console.log("y: " + data.gamma);
+  console.log("z: " + data.alpha);
+}</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/DOM/Touch_events">Touch Events</a></h3>
+  <h4>+ Windows Phone (8)</h4>
+  <pre class="brush: js">var el = document.getElementById("touch_me");
+
+el.addEventListener("touchstart", handleStart, false);
+el.addEventListener("touchend", handleEnd, false);
+el.addEventListener("touchcancel", handleCancel, false);
+el.addEventListener("touchleave", handleLeave, false);
+el.addEventListener("touchmove", handleMove, false);
+</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://hacks.mozilla.org/2012/04/taking-pictures-with-the-camera-api-part-of-webapi/">Media Capture</a></h3>
+  <h4>+ iOS, Android, Firefox (Android)</h4>
+  <pre class="brush: xml">&lt;input type="file" id="take-picture" accept="image/*"&gt;
+&lt;img id="show-picture"/&gt;</pre>
+  <pre class="brush: js">var takePicture = document.querySelector("#take-picture"),
+    showPicture = document.querySelector('#show-picture'),
+    file;
+takePicture.onchange = function(e) {
+  var URL = window.URL || window.webkitURL,
+      imgURL;
+  file = event.target.files[0];
+  imgURL = URL.createObjectURL(file);
+  showPicture.src = imgURL;
+}</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/data_URIs">Data URLs</a></h3>
+  <h4>Everyone</h4>
+  <pre class="brush: xml">&lt;img id="show-picture" src="data:image/jpeg;base64,/9j/4AAQSkZ..."/&gt;</pre>
+</section>
+
+<section class="slide">
+  <h1>Plug</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://techfests.com/Tulsa/2012/Speakers/OlivierBloch/default.aspx">HTML5 & JavaScript: the ultimate solution for mobile Cross-platform development</a></h3>
+  <iframe height="100%" width="100%" src="http://techfests.com/Tulsa/2012/Speakers/OlivierBloch/default.aspx"></iframe>
+</section>
 
 <section class="slide">
   <h1>What can we do soon?</h1>
@@ -361,12 +518,51 @@ Access-Control-Allow-Credentials: false</pre>
 <script src="extensions/scale/deck.scale.js"></script>
 <script src="/deckjs-remote.js"></script>
 
+<script src="syntaxhighlighter/scripts/shCore.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
+function disableFrame(frame) {
+  frame.src = 'about:blank';
+}
+function disableSlideFrames(slide) {
+  var frames = slide.getElementsByTagName('iframe');
+  for (var i = 0, frame; frame = frames[i]; i++) {
+    disableFrame(frame);
+  }
+}
+function enableFrame(frame) {
+  var src = frame._src;
+  if (frame.src != src && src != 'about:blank') {
+    frame.src = src;
+  }
+}
+function enableSlideFrames(slide) {
+  var frames = slide.getElementsByTagName('iframe');
+  for (var i = 0, frame; frame = frames[i]; i++) {
+    enableFrame(frame);
+  }
+}
+// copy original iframe src into _src property
+// then disable them all
+$('iframe').each(function(i, el){
+  el._src = el.src;
+  disableFrame(el);
+});
+$(document).bind('deck.change', function(event, from, to) {
+  if (from == 0)
+    return;
+  disableSlideFrames($.deck('getSlide', from-1).context);
+  enableSlideFrames($.deck('getSlide', to+1).context);
+});
 	$(function() {
 		$.deck('.slide');
     $.deck('remote', { server: 'localhost' });
 	});
+  SyntaxHighlighter.all();
 </script>
 </body>
 </html>
