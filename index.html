@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>State of HTML5 - groovecoder | Tulsa Tech Fest 2012</title>
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+  <!-- <link rel="stylesheet" href="extensions/navigation/deck.navigation.css"> -->
+  <!-- <link rel="stylesheet" href="extensions/status/deck.status.css"> -->
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+  <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+	<link rel="stylesheet" href="/deckjs-remote.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/swiss.css">
+	
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <!-- <link rel="stylesheet" href="themes/transition/horizontal-slide.css"> -->
+
+  <style>
+    .slide { height: 100%; }
+    .deck-slide-scaler { height: 100%; }
+    .overlay h3 { background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95); }
+    .overlay iframe { position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; border: 0px none; margin: 0px; z-index: -1; }
+    #evaluations { text-align: center; }
+    .buy-now { width: 400px; text-align: center; }
+    .rotate { display: inline-block;
+              margin-top: 300px;
+              animation-duration: 3s;
+              animation-iteration-count: infinite;
+              animation-name: rotate;
+            }
+    @keyframes rotate {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+	
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+</head>
+<body class="deck-container">
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+<h1><a href="http://ttf-html5.jit.su/deck">ttf-html5.jit.su/deck</a></h1>
+</section>
+
+<section class="slide">
+  <h2>State of HTML5 </h2>
+  <h3>Luke Crouch, Mozilla</h3>
+  <h4><a href="http://groovecoder.com">groovecoder.com</a><br/><a href="http://twitter.com/groovecoder">@groovecoder</a><br/><a href="https://twitter.com/search/?q=%23ttf-html5">#ttf-html5</a></h4>
+</section>
+
+<section class="slide">
+  <h1><img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/></h1>
+</section>
+
+<section class="slide">
+  <h1><img src="/deck/img/html6.png"/></h1>
+</section>
+
+<section class="slide">
+  <h2>Objectives</h2>
+  <ol>
+    <li class="slide">What is HTML5?</li>
+    <li class="slide">How did we get here?</li>
+    <li class="slide">What can we do now?</li>
+    <li class="slide">What can we do soon?</li>
+  </ol>
+</section>
+
+<section class="slide">
+<h2>What is?</h2>
+<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>
+</section>
+
+<section class="slide">
+<h2>What isn't?</h2>
+<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="https://blogs.msdn.com/b/ie/archive/2011/04/12/native-html5-first-ie10-platform-preview-available-for-download.aspx">not "Native"</a></h3>
+  <a target="_blank" href="https://blogs.msdn.com/b/ie/archive/2011/04/12/native-html5-first-ie10-platform-preview-available-for-download.aspx"><img src="/deck/img/native_html5.png" width="60%"/></a>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://techcrunch.com/2012/09/11/mark-zuckerberg-our-biggest-mistake-with-mobile-was-betting-too-much-on-html5/">not "Facebook's Biggest Mistake"</a></h3>
+  <iframe height="100%" width="100%" src="http://techcrunch.com/2012/09/11/mark-zuckerberg-our-biggest-mistake-with-mobile-was-betting-too-much-on-html5/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://www.readwriteweb.com/mobile/2011/09/how-facebook-mobile-was-design.php">i.e., not "Faceweb"</a></h3>
+  <iframe height="100%" width="100%" src="http://www.readwriteweb.com/mobile/2011/09/how-facebook-mobile-was-design.php"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="https://www.apple.com/hotnews/thoughts-on-flash/">not (yet) "Flash (or Silverlight) killer"</a></h3>
+  <h1><a target="_blank" href="https://www.apple.com/hotnews/thoughts-on-flash/"><img src="/deck/img/android_iphone_flash.jpg" width="60%"/></a></h1>
+</section>
+
+<section class="slide">
+<h1>What is<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>?</h1>
+</section>
+
+<section class="slide">
+<h2><a href="https://github.com/SirPepe/SpecGraph" target="_blank">HTML5 SpecGraph</a></h2>
+<h1><a href="https://github.com/SirPepe/SpecGraph" target="_blank"><img src="http://icant.co.uk/talks/img/html5spec.png" width="40%"/></a></h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://www.w3.org/TR/html5/">W3C specifications</a></h3>
+  <iframe height="100%" width="100%" src="http://www.w3.org/TR/html5/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">WHATWG "Living Standards"</a></h3>
+  <iframe height="100%" width="100%" src="http://www.whatwg.org/specs/web-apps/current-work/multipage/"></iframe>
+</section>
+
+<section class="slide">
+  <h2>Other working groups</h2>
+  <p><img src="https://developer.mozilla.org/media/img/icons/websockets.png" style="float: left"/>WebSockets, <a href="https://tools.ietf.org/wg/hybi/" target="_blank">IETF HyBi working group</a></p>
+  <p style="clear: both;"><img src="https://developer.mozilla.org/media/img/icons/webgl.png" style="float: left"/>WebGL, <a href="http://www.khronos.org/webgl/" target="_blank">Khronos WebGL working group</a></p>
+</section>
+
+<section class="slide">
+  <h2>Common use</h2>
+  <p><img src="https://developer.mozilla.org/media/img/icons/indexeddb.png" style="float: left"/>IndexedDB</p>
+  <p style="clear: both;"><img src="https://developer.mozilla.org/media/img/icons/multitouch.png" style="float: left"/>Touch</p>
+  <p style="clear: both;"><img src="https://developer.mozilla.org/media/img/icons/svg.png" style="float: left"/>SVG</p>
+  <p style="clear: both;"><img src="https://developer.mozilla.org/media/img/icons/geolocation.png" style="float: left"/>Geolocation</p>
+  <p style="clear: both;"><img src="https://developer.mozilla.org/media/img/icons/audio.png" style="float: left"/>Audio API</p>
+</section>
+
+<section class="slide">
+<h1>Standards<br/><strike>create</strike> follow<br/>innovation</h1>
+</section>
+
+<section class="slide">
+<h1>How did we get here?<br/></h1>
+</section>
+
+<section class="slide">
+<h2>We followed innovation.</h2>
+<img src="http://www.smallbiztechnology.com/wp-content/uploads/2012/07/idea.jpg" width="60%"/>
+</section>
+
+<section class="slide">
+<h2>&lt;img&gt;</h2>
+<p><blockquote>I'd like to propose a new, optional HTML tag: IMG</blockquote></p>
+<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><IMG SRC="file://foobar.com/foo/bar/blargh.xbm"></textarea>
+<p><cite>Marc Andreessen, Feb 25 1993</cite></p>
+</section>
+
+<section class="slide">
+<h2>&lt;img&gt;</h2>
+<p><blockquote>I have something very similar in Midas 2.0</blockquote></p>
+<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></textarea>
+<p><cite>Tony Johnson, Feb 25 1993</cite></p>
+</section>
+
+<section class="slide">
+<h2>&lt;img&gt;</h2>
+<p><blockquote>I had <strong>imagined</strong> that figures would be represented as</blockquote></p>
+<textarea id="code" name="code" class="code" mode="htmlmixed" style="display: none;"><a name=fig1 href="fghjkdfghj" REL="EMBED, PRESENT">Figure</a></textarea>
+<p><cite>Tim Berners-Lee, Feb 25 1993</cite></p>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt">HTML, IIIR Working Group, June 1993</a></h3>
+  <iframe height="100%" width="100%" src="http://www.w3.org/MarkUp/draft-ietf-iiir-html-01.txt"></iframe>
+</section>
+
+<section class="slide">
+<h2>AJAX</h2>
+<ol>
+<li class="slide">IXMLHttpRequest, MSXML, IE 5.0, March 1999</li>
+<li class="slide">XMLHttpRequest, Mozilla Gecko 0.6, Dec 2000</li>
+<li class="slide">Safari 1.2, Feb 2004</li>
+<li class="slide">Opera 8.0 Ap 2005</li>
+<li class="slide">W3C Working Draft, Apr 2006</li>
+</ol>
+</section>
+
+<section class="slide">
+<h2>Standardization</h2>
+<ul>
+<li class="slide">&lt;img&gt; - 4 months; Feb 1993 - June 1993</h3>
+<li class="slide">AJAX - 7 years; 1999 - 2006</h3>
+<li class="slide">HTML5 - 18 years; 2004 - 2022</h3>
+<li class="slide">WTF?<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTUkYktJpYxoQiW1cjLyqz4Oyd814G9fNo9CBV0CwwF8fMXh_s3"/></li>
+</section>
+
+<section class="slide">
+<h2>XHTML 1.1, May 2001</h2>
+<pre>application/xhtml+xml</pre>
+<img src="http://xhtml.com/8C236CAC-543D-48B1-A9B1-F1D996296A2A/xml-parsing-error.gif"/>
+</section>
+
+<section class="slide">
+<h1><img src="http://smartcanucks.ca/wp-content/uploads/2012/09/computergrandmameme-broke-the-internet.jpg" width="100%"/></h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/">Number of websites</a></h3>
+  <iframe height="100%" width="100%" src="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://webdirections.org/history/#61">Web History timeline</a></h3>
+  <iframe height="100%" width="100%" src="http://webdirections.org/history/#61"></iframe>
+</section>
+
+<section class="slide">
+<h1>Standards follow innovation</h1>
+</section>
+
+<section class="slide">
+  <h2>CSS 2.1</h2>
+  <ul>
+    <li>color: orange</li>
+    <li>display: inline-block</li>
+    <li>content: none | normal</li>
+    <li>white-space: pre-wrap | pre-line</li>
+    <li>cursor: progress</li>
+  </ul>
+  <h3 class="slide">June 7, 2011</h3>
+</section>
+
+<section class="slide">
+  <h1>Plug</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://techfests.com/Tulsa/2012/Speakers/YuryDelendik/default.aspx">Evolving with web standards: pdf.js</a></h3>
+  <iframe height="100%" width="100%" src="http://techfests.com/Tulsa/2012/Speakers/YuryDelendik/default.aspx"></iframe>
+</section>
+
+<section class="slide">
+  <h1>What can we do now?</h1>
+</section>
+
+<section class="slide">
+  <h1>Do your research.</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://html5please.com/">html5please.com</a></h3>
+  <iframe height="100%" width="100%" src="http://html5please.com/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://caniuse.com/">caniuse.com</a></h3>
+  <iframe height="100%" width="100%" src="http://caniuse.com/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://mobilehtml5.org/">mobilehtml5.org</a></h3>
+  <iframe height="100%" width="100%" src="http://mobilehtml5.org/"></iframe>
+</section>
+
+<section class="slide">
+<h1><img src="http://news.tidefans.com/wp-content/uploads/2011/12/2012.jpg" width="100%"/></h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://caniuse.com/#compare=ie+9,ie+10,firefox+7,firefox+16,chrome+14,chrome+23">caniuse.com 2012</a><br/>IE 9 -> 10, Firefox 7 -> 16, Chrome 14 -> 23</h3>
+  <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ie+9,ie+10,firefox+7,firefox+16,chrome+14,chrome+23"></iframe>
+</section>
+
+<section class="slide">
+  <h3>Web Sockets</h3>
+  <ul>
+    <li class="slide">Socket to you</li>
+    <li class="slide">socket.io</li>
+    <li class="slide">SignalR</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h3>Cross-Origin Resource Sharing (CORS)</h3>
+  <p>The right way to do JSONP</p>
+  <pre>Origin: http://ttf-html5.jit.su</pre>
+  <pre>Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET
+Access-Control-Allow-Credentials: false</pre>
+</section>
+
+<section class="slide">
+  <h3>Offline applications</h3>
+  <pre>&lt;html manifest="manifest.appcache"&lt;</pre>
+
+<section class="slide">
+  <h1>What can we do soon?</h1>
+</section>
+
+<section id="evaluations" class="slide">
+  <h1><a href="http://tulsatechfest.com" target="_blank">tulsatechfest.com</a></h1>
+  <h2>Evaluations</h2>
+  <section class="buy-now">
+    <p><marquee>Your input is very important to us!</marquee></p>
+    <p><blink>Win FABULOUS PRIZES!</blink></p>
+    <p class="rotate">Like a $50 Best Buy Gift Card!</p>
+  </section>
+</section>
+
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<!--
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+-->
+
+<!-- deck.status snippet -->
+<!--
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+-->
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<!-- <script src="extensions/status/deck.status.js"></script> -->
+<!-- <script src="extensions/navigation/deck.navigation.js"></script> -->
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="/deckjs-remote.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+    $.deck('remote', { server: 'localhost' });
+	});
+</script>
+</body>
+</html>
