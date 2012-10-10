@@ -33,6 +33,12 @@
     .deck-slide-scaler { height: 100%; }
     .overlay h3 { background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95); }
     .overlay iframe { position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; border: 0px none; margin: 0px; z-index: -1; }
+    .demobox { background: url('https://developer.mozilla.org/media/img/demos/bg-mainscreen.png') no-repeat scroll transparent;
+               background-position: center center;
+               min-height: 420px;
+               position: relative;
+             }
+    .demobox img { width: 434px; padding-top: 18px; }
     #evaluations { text-align: center; }
     .buy-now { width: 400px; text-align: center; }
     .rotate { display: inline-block;
@@ -112,12 +118,13 @@
 </section>
 
 <section class="slide">
-<h1>What is<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>?</h1>
+<h2>What is?</h2>
+<img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>
 </section>
 
 <section class="slide">
 <h2><a href="https://github.com/SirPepe/SpecGraph" target="_blank">HTML5 SpecGraph</a></h2>
-<h1><a href="https://github.com/SirPepe/SpecGraph" target="_blank"><img src="http://icant.co.uk/talks/img/html5spec.png" width="40%"/></a></h1>
+<a href="https://github.com/SirPepe/SpecGraph" target="_blank"><img src="http://icant.co.uk/talks/img/html5spec.png" width="50%"/></a>
 </section>
 
 <section class="slide overlay">
@@ -284,7 +291,7 @@
 <section class="slide overlay">
   <h3><a href="https://developer.mozilla.org/en-US/demos/devderby/2012/march" target="_blank">CSS 3D Transforms</a></h3>
   <h4>+ IE, Firefox</h4>
-  <iframe height="100%" width="100%" src="https://developer.mozilla.org/en-US/demos/devderby/2012/march"></iframe>
+  <div class="demobox"<a href="https://developer.mozilla.org/en-US/demos/detail/the-box/launch" target="_blank"><img src="https://developer.mozilla.org/media/uploads/demos/b/o/boblemarin/ae113b18ab7bf8a52635831a36dbc7c8/1332235955_screenshot_1.png"/></a></div>
 </section>
 
 <section class="slide">
@@ -320,6 +327,7 @@ conn.send("{slide:21}");</pre>
   <pre>Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET
 Access-Control-Allow-Credentials: false</pre>
+  <h4><a href="http://enable-cors.org/" target="_blank">http://enable-cors.org/</a></h4>
 </section>
 
 <section class="slide">
@@ -328,6 +336,7 @@ Access-Control-Allow-Credentials: false</pre>
   <pre class="brush: xml">&lt;html manifest="manifest.appcache"&gt;</pre>
   <h4>manifest.appcache</h4>
   <pre>CACHE MANIFEST
+# 2012-10-12T09:30:00.001
 index.html
 style.css
 script.js
@@ -337,6 +346,7 @@ new_data.json
 
 FALLBACK:
 data.json</pre>
+<pre>ExpiresByType text/cache-manifest "access plus 0 seconds"</pre>
 </section>
 
 <section class="slide">
@@ -458,7 +468,240 @@ takePicture.onchange = function(e) {
 </section>
 
 <section class="slide">
-  <h1>What can we do soon?</h1>
+  <h2>What can we do soon?</h2>
+  <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/tumblr_l8kok09jEa1qby8a1o1_500.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://caniuse.com/#compare=ie+10,firefox+18,chrome+24,safari+6,opera+12.5">caniuse.com 2012+</a><br/>IE 10, Firefox 18, Chrome 24, Safari 6, Opera 12.5</h3>
+  <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ie+10,firefox+18,chrome+24,safari+6,opera+12.5"></iframe>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://hacks.mozilla.org/2012/04/taking-pictures-with-the-camera-api-part-of-webapi/">WebGL</a></h3>
+  <h4>- IE</h4>
+  <div class="demobox"><a target="_blank" href="https://developer.mozilla.org/demos/detail/remixing-reality/launch"><img src="https://developer.mozilla.org/media/uploads/demos/J/a/Jay/remixing-reality/screenshot_1.png"/></a></div>
+<a target="_blank" href="https://developer.mozilla.org/demos/detail/remixing-reality/launch">remixing reality</a>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="">Audio API</a></h3>
+  <h4>- IE, Firefox (mozChannels, etc.)</h4>
+  <pre class="brush: html">&lt;audio id="audio" src="science_is_fun.mp3"&gt;&lt;/audio&gt;
+&lt;canvas id="canvas"&gt;&lt;/canvas&gt;</pre>
+  <pre class="brush: js">var a_ctx = new AudioContext();
+var analyser = a_ctx.createAnalyser();
+var source = a_ctx.createMediaElementSource(document.querySelector('#audio'));
+source.connect(analyser);
+var freqData = new Uint8Array(analyser.frequencyBinCount);
+for (var i = 0; i < freqData.length; i++) {
+  ctx.fillRect();
+}</pre>
+  <cite><a href="https://gist.github.com/2015620" target="_blank">real code</a></cite>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="">Audio API</a></h3>
+  <h4>- IE, Firefox (mozChannels, etc.)</h4>
+  <div class="demobox"><a target="_blank" href="https://developer.mozilla.org/en-US/demos/detail/dancerjs/launch"><img src="https://developer.mozilla.org/media/uploads/demos/j/s/jsantell/691a2fb9183062a122260db6c39260a3/1335836891_screenshot_1.png"></a></div>
+<a target="_blank" href="https://developer.mozilla.org/en-US/demos/detail/dancerjs/launch">dancer.js</a>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/DOM/Using_full-screen_mode">Fullscreen & Pointer Lock</a></h3>
+  <h4>- IE</h4>
+  <pre class="brush: js">var el = document.getElementById("gameboard");
+el.requestFullScreen = el.requestFullScreen || el.mozRequestFullScreen || el.webkitRequestFullScreen;
+el.requestFullScreen();</pre>
+  <div class="demobox"><a target="_blank" href="https://developer.mozilla.org/en-US/demos/detail/bananabread/launch"><img src="https://developer.mozilla.org/media/uploads/demos/a/z/azakai/3baf4ad7e600cbda06ec46efec5ec3b8/1345751931_screenshot_1.png"></a></div>
+<a target="_blank" href="https://developer.mozilla.org/en-US/demos/detail/bananabread/launch">bananabread</a>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/API/Gamepad/Using_Gamepad_API">Gamepad API</a></h3>
+  <h4>Firefox Nightly, Chrome Canary</h4>
+  <pre class="brush: js">window.addEventListener("MozGamepadConnected", callback, false);
+window.addEventListener("MozGamepadButtonDown", callback, false);
+window.addEventListener("MozGamepadButtonUp", callback, false);
+window.addEventListener("MozGamepadAxisMove", callback, false);</pre>
+  <div class="demobox"><a target="_blank" href="http://rawkets.com/"><img src="https://secure-b.vimeocdn.com/ts/228/686/228686476_295.jpg"></a></div>
+  <a target="_blank" href="http://rawkets.com/">http://rawkets.com</a>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://caniuse.com/#compare=ios_saf+6,android+4.1,op_mob+12.1,bb+10,and_chr+0,and_ff+0">caniuse.com 2012 mobile</a><br/>iOS 6.0, Android 4.1, Blackberry Browser 10, Opera Mobile 12.1, Chrome Mobile, Firefox Mobile</h3>
+  <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ios_saf+5.0-5.1,ios_saf+6,android+3,android+4.1,op_mob+11.5,op_mob+12,bb+7,bb+10,and_chr+0,and_ff+0"></iframe>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/DOM/window.navigator.battery">Battery API</a></h3>
+  <h4>Firefox, Chrome</h4>
+  <pre class="brush: js">var battery = navigator.battery ||
+              navigator.mozBattery ||
+              navigator.webkitBattery;
+
+battery.addEventListener("levelchange", function() {
+  if battery.level <= .1) { app.saveWork() }
+});
+</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/DOM/window.navigator.vibrate">Vibration API</a></h3>
+  <h4>Firefox, Chrome</h4>
+  <pre class="brush: js">vibrate = navigator.mozVibrate ||
+          navigator.webkitVibrate;
+
+vibrate(1000);
+vibrate([500, 500, 500]);</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="http://www.webrtc.org/">getUserMedia/WebRTC</a></h3>
+  <h4>Opera Mobile, Chrome (Desktop), Firefox Mobile (Beta)</h4>
+  <pre class="brush: js">
+var localVideo = document.getElementById("localVideo");
+
+function handleMedia(stream) {
+  var url = window.object.createObjectURL(stream);
+  localVideo.src = url;
+}
+
+getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUseMedia;
+getUserMedia({'audio': true, 'video': true}, handleMedia, handleMediaError);</pre>
+</section>
+
+<section class="slide">
+  <h2>Mobile Platforms</h2>
+  <h1><img src="http://rds-solution.com/wp-content/uploads/2012/05/mobile-logos.jpg?84cd58"/></h1>
+</section>
+
+<section class="slide">
+<h2><a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank">Firefox OS</a></h2>
+<a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank"><img src="http://techsnafu.com/wp-content/uploads/2012/07/Firefox-OS-Mobile-Mozilla-642x400.jpg" width="70%"></img></a>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/API/WebTelephony/Introduction_to_WebTelephony">WebTelephony</a></h3>
+  <h4>Firefox OS</h4>
+  <pre class="brush: js">var tel = navigator.mozTelephony;
+
+tel.onincoming = function(event) {
+  var incomingCall = event.call;
+  incomingCall.answer();
+  incomingCall.hangUp();
+}
+
+var call = tel.dial("123456789");
+call.onstatechange = function(event) {
+  if (event.state == "connected") {
+    call.muted = true;
+  }
+  call.hangUp();
+}</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/API/WebSMS/Introduction_to_WebSMS">WebSMS</a></h3>
+  <h4>Firefox OS</h4>
+  <pre class="brush: js">var sms = navigator.mozSms;
+
+sms.send("123456789", "Hello world!");
+
+sms.onreceived = function(event) {
+  console.log(event.message);
+};</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://wiki.mozilla.org/WebAPI">WebAPI</a></h3>
+  <ul>
+    <li>Settings API, Contacts API, Power Management API, Time/Clock API, Alarm API</li>
+    <li>WebBluetooth, WiFi Information API, WebFM API</li>
+    <li>W3C - Network Information API, Ambient Light Sensor, Proximity Sensor</li> 
+  </ul>
+</section>
+
+<section class="slide">
+  <h3>Isn't that just like webOS?</h3>
+  <h1><img src="http://5.itsalltech.com/2011/12/hp-webos-logo1.png"/></h1>
+</section>
+
+<section class="slide">
+  <h2><a href="http://www.reddit.com/r/webdev/comments/ztdf5/there_is_something_magical_about_firefox_os/c67ltsh" target="_blank">No, ITSupportGuy, it's not</a></h2>
+  <h4>webOS</h4>
+  <pre class="brush: js">this.tel = new Mojo.Service.Request('palm://com.palm.applicationManager', {
+  method:'open',
+  parameters: {target: "tel://8005555555"}
+});</pre>
+  <h4>Firefox OS</h4>
+<pre class="brush: js">var tel = navigator.mozTelephony;
+var call = tel.dial("8005555555");</pre>
+  <section class="slide">
+    <h4>iOS</h4><pre class="brush: cpp">NSString *phoneNumber = [@"tel://" stringByAppendingString:mymobileNO.titleLabel.text];
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];</pre>
+  </section>
+</section>
+
+<section class="slide">
+  <h2>Windows Phone</h2><pre>PhoneCallTask phoneTask = null;// Constructor
+PhoneNumberChooserTask phoneNumberChooserTask;
+ 
+public MainPage()
+{    
+   InitializeComponent();    
+   phoneNumberChooserTask = new PhoneNumberChooserTask();
+   phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
+   phoneTask = new PhoneCallTask();
+}</pre>
+</section>
+
+<section class="slide">
+  <h2>Android</h2>
+<pre class="brush: xml"><?xml version="1.0" encoding="utf-8"?>
+    <manifest ...
+        <application ... >
+            <activity android:name=".phonecalls"
+                      android:label="@string/app_name">
+            ...
+            </activity>
+        </application>
+        ...
+    </manifest>
+</pre>
+<pre class="brush: java">import android.app.Activity;
+    import android.content.ActivityNotFoundException;
+    import android.content.Intent;
+    import android.net.Uri;
+    import android.os.Bundle;
+    import android.util.Log;
+     
+    public class phonecalls extends Activity {
+        /** Called when the activity is first created. */
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.main);
+            call();
+        }
+     
+    private void call() {
+        try {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:123456789"));
+            startActivity(callIntent);
+        } catch (ActivityNotFoundException activityException) {
+             Log.e("helloandroid dialing example", "Call failed", e);
+        }
+    }
+     
+    }</pre>
+</section>
+
+<section class="slide">
+  <h2>Firefox OS</h2>
+  <pre class="brush: js">var tel = navigator.mozTelephony;
+var call = tel.dial("8005555555");</pre>
 </section>
 
 <section id="evaluations" class="slide">
@@ -522,6 +765,10 @@ takePicture.onchange = function(e) {
 <script src="syntaxhighlighter/scripts/shBrushCss.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushJava.js"></script>
+
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
@@ -555,12 +802,16 @@ $('iframe').each(function(i, el){
 $(document).bind('deck.change', function(event, from, to) {
   if (from == 0)
     return;
-  disableSlideFrames($.deck('getSlide', from-1).context);
-  enableSlideFrames($.deck('getSlide', to+1).context);
+  $toSlide = $.deck('getSlide', to);
+  enableSlideFrames($toSlide.context);
+  $nextSlide = $.deck('getSlide', to+1)
+  if ($nextSlide) {
+    enableSlideFrames($nextSlide.context);
+  }
 });
 	$(function() {
 		$.deck('.slide');
-    $.deck('remote', { server: 'localhost' });
+    $.deck('remote', { server: 'ttf-html5.jit.su' });
 	});
   SyntaxHighlighter.all();
 </script>
