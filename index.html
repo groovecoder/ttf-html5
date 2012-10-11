@@ -32,13 +32,14 @@
     .slide { height: 100%; }
     .deck-slide-scaler { height: 100%; }
     .overlay h3 { background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.95); }
-    .overlay iframe { position: absolute; left: 0px; top: 0px; height: 100%; width: 100%; border: 0px none; margin: 0px; z-index: -1; }
+    .overlay iframe, .overlay img { height: 100%; border: 0px none; z-index: -1; }
+    .overlay iframe { position: absolute; left: 0px; top: 0px; width: 100%; margin: 0px;}
     .demobox { background: url('https://developer.mozilla.org/media/img/demos/bg-mainscreen.png') no-repeat scroll transparent;
                background-position: center center;
                min-height: 420px;
                position: relative;
              }
-    .demobox img { width: 434px; padding-top: 18px; }
+    .demobox img { width: 434px; padding-top: 18px; height: auto; }
     #evaluations { text-align: center; }
     .buy-now { width: 400px; text-align: center; }
     .rotate { display: inline-block;
@@ -114,7 +115,7 @@
 
 <section class="slide overlay">
   <h3><a target="_blank" href="https://www.apple.com/hotnews/thoughts-on-flash/">not (yet) "Flash (or Silverlight) killer"</a></h3>
-  <h1><a target="_blank" href="https://www.apple.com/hotnews/thoughts-on-flash/"><img src="/deck/img/android_iphone_flash.jpg" width="60%"/></a></h1>
+  <a target="_blank" href="https://www.apple.com/hotnews/thoughts-on-flash/"><img src="/deck/img/android_iphone_flash.jpg"></a>
 </section>
 
 <section class="slide">
@@ -211,6 +212,16 @@
 <li class="slide">WTF?<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTUkYktJpYxoQiW1cjLyqz4Oyd814G9fNo9CBV0CwwF8fMXh_s3"/></li>
 </section>
 
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/">Number of websites</a></h3>
+  <iframe height="100%" width="100%" src="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a target="_blank" href="http://news.netcraft.com/archives/2012/10/02/october-2012-web-server-survey.html">Number of websites</a></h3>
+  <iframe height="100%" width="100%" src="http://news.netcraft.com/archives/2012/10/02/october-2012-web-server-survey.html"></iframe>
+</section>
+
 <section class="slide">
 <h2>XHTML 1.1, May 2001</h2>
 <pre>application/xhtml+xml</pre>
@@ -221,9 +232,14 @@
 <h1><img src="http://smartcanucks.ca/wp-content/uploads/2012/09/computergrandmameme-broke-the-internet.jpg" width="100%"/></h1>
 </section>
 
-<section class="slide overlay">
-  <h3><a target="_blank" href="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/">Number of websites</a></h3>
-  <iframe height="100%" width="100%" src="http://royal.pingdom.com/2008/04/04/how-we-got-from-1-to-162-million-websites-on-the-internet/"></iframe>
+<section class="slide">
+<h2>Standardization</h2>
+<ul>
+<li class="slide">&lt;img&gt; - 4 months; Feb - June 1993; <strong>130</strong> websites</li>
+<li class="slide">AJAX - 7 years; 1999 - 2006; <strong>1,900,000 - 38,100,000</strong> websites</li>
+<li class="slide" style="color: red;">XHTML 1.1 - 1.5 years; Sep 1999 - May 2001 <strong>3,200,000 - 11,600,000</strong> websites</li>
+<li class="slide">HTML5 - 18 years; 2004 - 2022; <strong>21,300,000 - 188,000,000+</strong> websites</li>
+</ul>
 </section>
 
 <section class="slide overlay">
@@ -232,7 +248,7 @@
 </section>
 
 <section class="slide">
-<h1>Standards follow innovation</h1>
+<h1>Standards <em>should</em> follow innovation</h1>
 </section>
 
 <section class="slide">
@@ -279,8 +295,8 @@
   <iframe height="100%" width="100%" src="http://mobilehtml5.org/"></iframe>
 </section>
 
-<section class="slide">
-<h1><img src="http://news.tidefans.com/wp-content/uploads/2011/12/2012.jpg" width="100%"/></h1>
+<section class="slide overlay">
+  <img src="http://news.tidefans.com/wp-content/uploads/2011/12/2012.jpg"/>
 </section>
 
 <section class="slide overlay">
@@ -382,7 +398,7 @@ request.onsuccess = function(e) {
 </section>
 
 <section class="slide">
-  <h3><a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a></h3>
+  <h3>aside: (<a href="http://brian.io/lawnchair/" target="_blank">lawnchair</a>)</h3>
   <pre class="brush: js">var db = new lawnchair({name: 'todo'}, function(store) {
   var todo = {text: todoText, timestamp: new Date().getTime();}
   store.save(todo);
@@ -467,9 +483,11 @@ takePicture.onchange = function(e) {
   <iframe height="100%" width="100%" src="http://techfests.com/Tulsa/2012/Speakers/OlivierBloch/default.aspx"></iframe>
 </section>
 
-<section class="slide">
-  <h2>What can we do soon?</h2>
-  <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/tumblr_l8kok09jEa1qby8a1o1_500.png"/>
+<section class="slide overlay">
+  <h3>What can we do soon?</h3>
+  <div style="width: 100%; text-align: center;">
+    <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/tumblr_l8kok09jEa1qby8a1o1_500.png" style="height: 100%; width: auto;"/>
+  </div>
 </section>
 
 <section class="slide overlay">
@@ -529,7 +547,7 @@ window.addEventListener("MozGamepadAxisMove", callback, false);</pre>
 </section>
 
 <section class="slide overlay">
-  <h3><a target="_blank" href="http://caniuse.com/#compare=ios_saf+6,android+4.1,op_mob+12.1,bb+10,and_chr+0,and_ff+0">caniuse.com 2012 mobile</a><br/>iOS 6.0, Android 4.1, Blackberry Browser 10, Opera Mobile 12.1, Chrome Mobile, Firefox Mobile</h3>
+  <h3><a target="_blank" href="http://caniuse.com/#compare=ios_saf+6,android+4.1,op_mob+12.1,bb+10,and_chr+0,and_ff+0">caniuse.com 2012+ mobile</a><br/>iOS 6.0, Android 4.1, Blackberry Browser 10, Opera Mobile 12.1, Chrome Mobile, Firefox Mobile</h3>
   <iframe height="100%" width="100%" src="http://caniuse.com/#compare=ios_saf+5.0-5.1,ios_saf+6,android+3,android+4.1,op_mob+11.5,op_mob+12,bb+7,bb+10,and_chr+0,and_ff+0"></iframe>
 </section>
 
@@ -576,9 +594,9 @@ getUserMedia({'audio': true, 'video': true}, handleMedia, handleMediaError);</pr
   <h1><img src="http://rds-solution.com/wp-content/uploads/2012/05/mobile-logos.jpg?84cd58"/></h1>
 </section>
 
-<section class="slide">
-<h2><a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank">Firefox OS</a></h2>
-<a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank"><img src="http://techsnafu.com/wp-content/uploads/2012/07/Firefox-OS-Mobile-Mozilla-642x400.jpg" width="70%"></img></a>
+<section class="slide overlay">
+<h3><a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank">Firefox OS</a></h3>
+<a href="https://www.mozilla.org/en-US/firefoxos/" target="_blank"><img src="http://techsnafu.com/wp-content/uploads/2012/07/Firefox-OS-Mobile-Mozilla-642x400.jpg"></img></a>
 </section>
 
 <section class="slide">
@@ -704,6 +722,172 @@ public MainPage()
 var call = tel.dial("8005555555");</pre>
 </section>
 
+<section class="slide overlay">
+  <h3>Apps</h3>
+  <img src="http://www-bgr-com.vimg.net/wp-content/uploads/2010/12/apple-app-store-apps.jpg"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://marketplace.mozilla.org/" target="_blank">Firefox Marketplace</a></h3>
+  <img src="/deck/img/firefox_marketplace.png"/>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Apps/Getting_Started">Open Web Apps</a></h3>
+  <h4>Firefox OS</h4>
+  <pre class="brush: js">var req = navigator.mozApps.getSelf();
+requestion.onsuccess = function() {
+  if (request.results) {
+    // already installed
+  } else {
+    var inst = navigator.mozApps.install("/path/to/manifest.webapp");
+    inst.onsuccess = function() {
+      alert("Thanks for installing!");
+    }
+  }
+}</pre>
+</section>
+
+<section class="slide">
+  <h3><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Apps/Getting_Started">Open Web Apps</a></h3>
+  <h4>/path/to/manifest.webapp</h4>
+  <pre class="brush: js">{
+  "name": "My App",
+  "description": "Elevator pitch goes here.",
+  "launch_path": "/",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}</pre>
+  <pre>Content-Type: application/x-web-app-manifest+json</pre>
+</section>
+
+<section class="slide overlay">
+  <h3>Sign-in</h3>
+  <img src="/deck/img/sourceforge_login.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://login.persona.org/" target="_blank">Persona</a></h3>
+  <img src="http://www.geeky-gadgets.com/wp-content/uploads/2012/09/Mozilla-Persona.jpg"/>
+</section>
+
+<section class="slide">
+  <h2>BrowserID/getVerifiedEmail</h2>
+  <h4>Include polyfill</h4>
+  <pre class="brush: xml">&lt;script src="https://login.persona.org/include.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+  <h4>getVerifiedEmail</h4>
+  <pre class="brush: js">navigator.id.getVerifiedEmail( function(assertion) {
+  $('input[name="assertion"]').val(assertion.toString());
+  $('form.browserid').submit();
+});</pre>
+</section>
+
+<section class="slide">
+  <h2>BrowserID/getVerifiedEmail</h2>
+  <h4>django backend</h4>
+  <pre class="brush: python">from django_browserid.auth import BrowserIDBackend, get_audience
+
+assertion = form.cleaned_data['assertion']
+backend = browserid_auth.BrowserIDBackend()
+result = backend.verify(assertion, get_audience(request))</pre>
+</section>
+
+<section class="slide">
+  <h2>What does that have to do with?</h2>
+  <img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"/>
+</section>
+
+<section class="slide">
+<h1>Standards <em>should</em> follow innovation</h1>
+</section>
+
+<section class="slide overlay">
+  <h3>Innovation</h3>
+  <img src="http://upload.wikimedia.org/wikipedia/commons/3/39/Legoland_creation_centre_6.png" width="100%"/>
+</section>
+
+<section class="slide overlay">
+  <h3>Standards</h3>
+  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Lego_dimensions.svg/512px-Lego_dimensions.svg.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3>Innovation</h3>
+  <img src="http://1.bp.blogspot.com/-WIhxzXZzJr0/Tl_wBMF5vuI/AAAAAAAAEKA/y34yowt46AA/s1600/lego1.jpg" width="100%"/>
+</section>
+
+<section class="slide overlay">
+  <h3>Standards</h3>
+  <img src="http://www.brickinstructions.com/08000/8028/001.jpg"/>
+</section>
+
+<section class="slide">
+  <h1>Go innovate</h1>
+</section>
+
+<section class="slide">
+  <h3><a href="http://www.backalleycoder.com/2012/04/25/i-want-a-damnodeinserted/" target="_blank">X-Tags hack</a></h3>
+  <iframe height="100%" width="100%" src="http://jsfiddle.net/Zzw2M/33/embedded/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="http://x-tags.org/" target="_blank">X-Tags project</a></h3>
+  <iframe width="100%" src="http://x-tags.org/"></iframe>
+</section>
+
+<section class="slide">
+  <h1>Go standard</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="http://www.w3.org/TR/2012/WD-components-intro-20120522/#custom-element-section" target="_blank">Web Components Standard</a></h3>
+  <iframe width="100%" src="http://www.w3.org/TR/2012/WD-components-intro-20120522/#custom-element-section"></iframe>
+</section>
+
+<section class="slide">
+  <h1>Go innovate</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://developer.mozilla.org/en-US/demos/devderby" target="_blank">Submit a demo to MDN Dev Derby</a></h3>
+  <iframe width="100%" src="https://developer.mozilla.org/en-US/demos/devderby"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://developer.mozilla.org/en-US/docs/Apps/Getting_Started" target="_blank">Make an app</a></h3>
+  <img src="/deck/img/apps_getting_started.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://developer.mozilla.org/en-US/docs/Persona/Quick_Setup" target="_blank">Set up Persona</a></h3>
+  <img src="/deck/img/persona_quick_setup.png"/>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="https://hacks.mozilla.org/2012/10/r2d2b2g-an-experimental-prototype-firefox-os-test-environment/" target="_blank">run Firefox OS with r2d2b2g</a></h3>
+  <iframe width="100%" src="https://hacks.mozilla.org/2012/10/r2d2b2g-an-experimental-prototype-firefox-os-test-environment/"></iframe>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="http://tulsa.hackathon.io/events/home" target="_blank">Come to Tulsa Hackathon</a></h3>
+  <iframe width="100%" src="http://tulsa.hackathon.io/events/home"></iframe>
+</section>
+
+<section class="slide">
+  <h1>Go standard</h1>
+</section>
+
+<section class="slide overlay">
+  <h3><a href="http://tulsawebdevs.org" target="_blank">Tulsa Web Devs</a></h3>
+  <iframe width="100%" src="http://tulsawebdevs.org"></iframe>
+</section>
+
 <section id="evaluations" class="slide">
   <h1><a href="http://tulsatechfest.com" target="_blank">tulsatechfest.com</a></h1>
   <h2>Evaluations</h2>
@@ -733,6 +917,11 @@ var call = tel.dial("8005555555");</pre>
 	<span class="deck-status-total"></span>
 </p>
 -->
+
+<!-- deckjs-remote status -->
+<section class="deckjs-remote-status">
+viewers: <span id="deckjs-viewers"></span>
+</section>
 
 <!-- deck.goto snippet -->
 <form action="." method="get" class="goto-form">
@@ -764,9 +953,9 @@ var call = tel.dial("8005555555");</pre>
 <script src="syntaxhighlighter/scripts/shCore.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushCss.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script src="syntaxhighlighter/scripts/shBrushPython.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushXml.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushCpp.js"></script>
-<script src="syntaxhighlighter/scripts/shBrushCSharp.js"></script>
 <script src="syntaxhighlighter/scripts/shBrushJava.js"></script>
 
 
@@ -811,7 +1000,7 @@ $(document).bind('deck.change', function(event, from, to) {
 });
 	$(function() {
 		$.deck('.slide');
-    $.deck('remote', { server: 'ttf-html5.jit.su' });
+    $.deck('remote', { server: 'localhost' });
 	});
   SyntaxHighlighter.all();
 </script>
